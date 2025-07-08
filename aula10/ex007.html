@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números.</title>
+    <style>
+        div {
+            width: 400px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        <input type="number" name="num1" id="inum1"> +
+        <input type="number" name="num2" id="inum2">
+        <input type="button" value="Somar" id="botao">
+    </form>
+    <div id="cx">
+        Resultado
+    </div>
+
+    <script> 
+        var a = document.querySelector('#botao')
+        a.addEventListener('click', clicar)
+        function clicar() {
+            var txt1 = document.querySelector('#inum1')
+            var txt2 = document.querySelector('#inum2')
+            var n1 = Number(txt1.value)
+            var n2 = Number(txt2.value)
+            var soma = n1 + n2
+            document.querySelector('#cx').innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong> ${soma} </strong>`
+        }
+    </script>
+</body>
+</html>
