@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana</title>
+    <style>
+        div#cx {
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            color: white;
+            border: 3px solid white;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dia da Semana</h1>
+    <input type="button" value="Verificar" id="botao">
+    <div id="cx">
+
+    </div>
+
+    <script>
+        var botao = document.querySelector('#botao')
+        botao.addEventListener('click', clicar)
+
+        function clicar() {
+            var momento = new Date()
+            var dia = momento.getDay()
+            var resp = document.querySelector('#cx')
+            switch (dia) {
+                case 0: 
+                    resp.innerText = 'Hoje é DOMINGO.'
+                break
+
+                case 1: 
+                    resp.innerText = 'Hoje é SEGUNDA.'
+                break
+
+                case 2: 
+                    resp.innerText = 'Hoje é TERÇA.'
+                break
+
+                case 3: 
+                    resp.innerText = 'Hoje é QUARTA.'
+                break
+
+                case 4: 
+                    resp.innerText = 'Hoje é QUINTA.'
+                break
+
+                case 5: 
+                    resp.innerText = 'Hoje é SEXTA.'
+                break
+
+                default: 
+                    resp.innerText = 'Hoje é SÁBADO.'
+                break
+            }
+        }
+    </script>
+</body>
+</html>

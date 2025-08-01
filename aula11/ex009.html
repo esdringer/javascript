@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual seu país?</title>
+</head>
+<body>
+    <h1>Qual a sua NACIONALIDADE?</h1>
+    <input type="text" name="pais" id="ipais">
+    <input type="button" value="Verificar." id="botao">
+    <div id="cx">
+
+    </div>
+
+    <script>
+        document.querySelector('#botao').addEventListener('click', clicar)
+
+        function clicar() {
+            var pais = document.querySelector('#ipais').value
+            if (pais == 'Brasil') {
+                document.querySelector('#cx').innerText = 'Você é brasileiro.'
+            } else {
+                document.querySelector('#cx').innerText = 'Você é estrangeiro.'
+            }
+        }
+    </script>
+</body>
+</html>

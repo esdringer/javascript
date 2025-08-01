@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+</head>
+<body>
+    <h1>Eleitores</h1>
+    <p>
+        <label for="iage">Qual a sua idade?</label>
+        <input type="number" name="age" id="iage">
+        <input type="button" value="Verificar" id="botao">
+    </p>
+    <div id="cx">
+        Aguardando...
+    </div>
+
+    <script>
+        document.querySelector('#botao').addEventListener('click', clicar)
+
+        function clicar() {
+            var idade = Number(document.querySelector('#iage').value)
+            var resp = document.querySelector('#cx')
+            if (idade < 16) {
+                resp.innerText = `Você tem ${idade} anos de idade. Não tem idade suficiente para votar.`
+            } else if (idade < 18 || idade > 65) {
+                resp.innerText = `Você tem ${idade} anos de idade. Seu voto é opcional.`
+            } else {
+                resp.innerText = `Você tem ${idade} anos de idade. Seu voto é obrigatório.`
+            }
+        }
+    </script>
+</body>
+</html>

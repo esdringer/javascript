@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas do Dia</title>
+</head>
+<body>
+    <h1>Relógio</h1>
+    <p>
+        <label for="ihora">Que horas são?</label> 
+        <input type="number" name="hora" id="ihora">
+        <input type="button" value="Verificar" id="botao">
+    </p>
+    <div id="cx">
+
+    </div>
+
+    <script>
+        var botao = document.querySelector('#botao')
+        botao.addEventListener('click', clicar)
+
+        function clicar() {
+            var hora = Number(document.querySelector('#ihora').value)
+            var resp = document.querySelector('#cx')
+
+            if (hora < 5) {
+                resp.innerText = `São exatamente ${hora} horas. Boa madrugada!`
+            } else if (hora >= 5 && hora < 12) {
+                resp.innerText = `São exatamente ${hora} horas. Bom dia!`
+            } else if (hora >= 12 && hora < 18) {
+                resp.innerText = `São exatamente ${hora} horas. Boa tarde!`
+            } else {
+                resp.innerText = `São exatamente ${hora} horas. Boa noite!`
+            }
+        }
+    </script>
+</body>
+</html>
