@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <div id="res">
+        Testando...
+    </div>
+    
+    <script>
+        var num = [4, 7, 5, 2, 9, 3, 6]
+        
+        var res = document.querySelector('#res')
+
+        for (var pos in num) {
+            res.innerHTML += `<p>O valor na posição ${pos} é ${num[pos]}</p>`
+        }
+    </script>
+</body>
+</html>
